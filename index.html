@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Countdown to Our Special Day</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #535cd6 0%, #ff7149 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 50px 20px;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .countdown-container {
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      display: inline-block;
+      padding: 40px 60px;
+      box-shadow: 0 0 30px rgba(255, 192, 203, 0.4);
+      backdrop-filter: blur(10px);
+      transition: box-shadow 0.3s ease, background-color 0.3s ease;
+      cursor: default;
+    }
+
+    .countdown-container:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.7);
+    }
+
+    .countdown {
+      font-size: 3em;
+      font-weight: bold;
+      color: #fff0f5;
+      letter-spacing: 5px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .decorations {
+      font-size: 2em;
+      margin: 30px 0 10px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 1em;
+      color: #ffeef2;
+    }
+
+    .countdown-container:hover .countdown {
+        color: #ffffff;
+        text-shadow: 0 0 15px #ffffff;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="decorations">💖💫🌹✨💕</div>
+  <h1>Countdown till </h1>
+
+  <div class="countdown-container">
+    <div class="countdown" id="countdown">Loading...</div>
+  </div>
+
+  <div class="decorations">💘🌸💞🌟💍</div>
+
+  <footer>
+    Let the love grow until the big moment arrives 🌷
+  </footer>
+
+  <script>
+    // 🎯 Set your target date here
+    const targetDate = new Date("2025-10-17T00:00:00").getTime();
+
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdownEl.innerHTML = "00:00:00:00";
+        clearInterval(timer);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = 
+        String(days).padStart(2, '0') + ":" +
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0') + ":" +
+        String(seconds).padStart(2, '0');
+    }
+
+    const timer = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial update
+  </script>
+</body>
+</html>
