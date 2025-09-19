@@ -5,79 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Countdown to Our Special Day</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #535cd6 0%, #ff7149 100%);
-      color: #ffffff;
-      text-align: center;
-      padding: 50px 20px;
-      margin: 0;
-    }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e06b6b 0%, #912f56 100%);
+    color: #fff0f5;
+    text-align: center;
+    padding: 50px 20px;
+    margin: 0;
+  }
+
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #fffafa;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .countdown-container {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 20px;
+    display: block;
+    max-width: 90%;
+    padding: 40px 60px;
+    margin: 0 auto;
+    box-shadow: 0 0 30px rgba(255, 192, 203, 0.3);
+    backdrop-filter: blur(10px);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: default;
+  }
+
+  .countdown-container:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.4);
+  }
+
+  .countdown {
+    font-size: 3em;
+    font-weight: bold;
+    color: #fff0f5;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .countdown-container:hover .countdown {
+    color: #ffffff;
+    text-shadow: 0 0 15px #ffffff;
+  }
+
+  .decorations {
+    font-size: 2em;
+    margin: 30px 0 10px;
+  }
+
+footer pre {
+  font-size: 1em;
+  font-family: inherit;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  color: #ffeef2;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+  /* Mobile responsiveness */
+  @media screen and (max-width: 600px) {
     h1 {
-      font-size: 2.8em;
-      margin-bottom: 20px;
-      color: #fff;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      font-size: 2em;
     }
 
     .countdown-container {
-      background: rgba(255, 255, 255, 0.15);
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      border-radius: 20px;
-      display: inline-block;
-      padding: 40px 60px;
-      box-shadow: 0 0 30px rgba(255, 192, 203, 0.4);
-      backdrop-filter: blur(10px);
-      transition: box-shadow 0.3s ease, background-color 0.3s ease;
-      cursor: default;
-    }
-
-    .countdown-container:hover {
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.7);
+      padding: 20px 30px;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 auto;
     }
 
     .countdown {
-      font-size: 3em;
-      font-weight: bold;
-      color: #fff0f5;
-      letter-spacing: 5px;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      transition: color 0.3s ease, text-shadow 0.3s ease;
+      font-size: 2.5em;
+      letter-spacing: 3px;
     }
 
-    .decorations {
-      font-size: 2em;
-      margin: 30px 0 10px;
-    }
+  }
+</style>
 
-    footer {
-      margin-top: 40px;
-      font-size: 1em;
-      color: #ffeef2;
-    }
 
-    .countdown-container:hover .countdown {
-        color: #ffffff;
-        text-shadow: 0 0 15px #ffffff;
-}
-
-  </style>
 </head>
 <body>
 
+  
+  
   <div class="decorations">💖💫🌹✨💕</div>
-  <h1>Countdown till we meet ☺️ </h1>
+  <h1>Countdown till our next day together ☺️ </h1>
 
   <div class="countdown-container">
     <div class="countdown" id="countdown">Loading...</div>
   </div>
 
-  <div class="decorations">🥹🫂💞🌹</div>
+  <div class="decorations">🧡🫂💞🌹</div>
 
   <footer>
-    Cannot wait to see you again my love 🌷
+    <pre>
+    "Love suffers long and is kind.
+    It is not proud.
+    Love bears all things, believes all things,
+    hopes all things, and endures all things.
+    Love never fails.
+    And now these three remain: Faith, Hope and Love.
+    But the greatest of these is Love."🌷
+    </pre>
   </footer>
 
   <script>
